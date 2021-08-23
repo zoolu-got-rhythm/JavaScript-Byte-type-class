@@ -1,0 +1,1 @@
+# JavaScript-Byte-type-class
