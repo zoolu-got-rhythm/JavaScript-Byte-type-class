@@ -1,32 +1,9 @@
-const {computeBinaryString} = require("./computeBinaryStringRepOfByteBruteForce");
-// 0 - 255 range 
-class ByteUnsignedType{
-    #unsignedByteArr;
+const { ByteUnsignedType } = require("./ByteUnsignedType");
 
-    constructor(number){
-        if(!(typeof number === "number" && this.#isInt(number)))
-            throw new Error("must parse in an integer/whole number");
-        this.#unsignedByteArr = new Uint8Array(1);
-        this.#unsignedByteArr[0] = number;
-    }
-
-    #isInt(n) {
-        return n % 1 === 0;
-     }
-
-    getByte(){
-        return this.#unsignedByteArr[0];
-    }
-
-    setByte(number){
-        this.#unsignedByteArr[0] = number; 
-    }
-
-    toString(){
-        return computeBinaryString(this.#unsignedByteArr[0]);
-    }
-}
-
-const byteFive = new ByteUnsignedType(5);
-byteFive.setByte(8);
-console.log(byteFive.toString());
+// example
+const byteVal = new ByteUnsignedType(5); // create byte value
+console.log(byteVal.getByte()); // => 5
+console.log(byteVal.toString()); // see binary representation (00000101)
+byteVal.setByte(8); // change/mutate byte value
+console.log(byteVal.getByte()); // => 8
+console.log(byteVal.toString()); // see binary representation (00001000)

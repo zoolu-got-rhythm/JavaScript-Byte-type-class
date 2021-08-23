@@ -31,8 +31,4 @@ function sum(arr){
     return arr.reduce((acum, current) => acum + current, 0); // if empty arr garuantee return 0
 }
 
-module.exports.computeBinaryString = (number) => computeBinaryRepresentationOfByteNumberBruteForce(number).toString();
-
-// test the function with a valid byte number here: 
-// e.g: computeBinaryRepresentationOfByteNumberBruteForce(155).toString() => "1,0,0,1,1,0,1,1"
-// console.log(computeBinaryRepresentationOfByteNumberBruteForce(155).toString());
+module.exports.computeBinaryString = (number) => computeBinaryRepresentationOfByteNumberBruteForce(number).toString().replace(/,/g, "");
